@@ -1,0 +1,6 @@
+- search
+
+  - trending
+
+- favorites
+  - stars
