@@ -50,12 +50,12 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100 min-h-screen psychedelic-background">
       <Navbar />
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-semibold mb-4 text-center">
-          Giphy Search App
-        </h1>
+        <div className="flex justify-center items-center mb-8">
+          <h1 className="text-5xl font-bold text-gray-900">GIPHY</h1>
+        </div>
         <div className="flex justify-center items-center space-x-4 mb-4">
           <Link to="/favorites" className="text-blue-600 underline">
             Favorites
@@ -81,6 +81,11 @@ function App() {
             </button>
           </div>
         </div>
+        <div className="flex flex-wrap justify-center">
+          <h1 className="text-2xl font-semibold mb-4 text-center">
+            Trending Now
+          </h1>
+        </div>
         <div className="flex flex-wrap justify-center gap-4">
           {trendingGiphy.map((item) => (
             <div
@@ -92,7 +97,7 @@ function App() {
           ))}
         </div>
         {searchGiph !== "" && giphy.length > 0 && (
-          <div className="mt-8">            
+          <div className="mt-8">
             <div className="w-full">
               <Card
                 giphy={giphy}

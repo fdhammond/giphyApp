@@ -1,0 +1,24 @@
+.psychedelic-background {
+  background: radial-gradient(
+    circle at center,
+    #00bfff,
+    #00ccff,
+    #33ccff,
+    #66ccff,
+    #99ccff,
+    #cc99ff
+  );
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slidein {
+  animation: slidein 0.5s ease-out;
+}
