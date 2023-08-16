@@ -3,6 +3,7 @@ import {
   Gifs,
   AppContextInterfaceProps,
   FavoritesProviderProps,
+  CardProps,
 } from "../types/types";
 
 const FavoritesContext = createContext<AppContextInterfaceProps>({
@@ -19,7 +20,10 @@ export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({
 
   return (
     <FavoritesContext.Provider
-      value={{ favorites: favorites, setFavorites: setFavorites }}>
+      value={{
+        favorites: favorites,
+        setFavorites: setFavorites,
+      }}>
       {children}
     </FavoritesContext.Provider>
   );

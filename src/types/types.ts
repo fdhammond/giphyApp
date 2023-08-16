@@ -27,6 +27,8 @@ export interface CardProps {
   giphy: GifProps[];
   favorites: Gifs[];
   setFavorites: React.Dispatch<React.SetStateAction<GifProps[]>>;
+  showNewFavoriteMessage: boolean;
+  setShowNewFavoriteMessage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface FavoritesProps {
