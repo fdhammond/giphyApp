@@ -10,8 +10,6 @@ function App() {
   const [searchGiph, setSearchGiph] = useState<string>("");
   const [searchError, setSearchError] = useState<boolean>(false);
   const [trendingGiphy, setTrendingGiphy] = useState<string[]>([]);
-  const [showNewFavoriteMessage, setShowNewFavoriteMessage] =
-    useState<boolean>(false);
   const { favorites, setFavorites } = useFavoriteContext();
 
   const API_KEY: ImportMetaEnv = import.meta.env.VITE_API_KEY;
@@ -44,7 +42,7 @@ function App() {
         });
         setGiphy(gifUrls);
       });
-  }, [API_URL, searchGiph]);
+  }, [API_URL, searchGiph, API_TRENDING]);
 
   const handleSelectedTrendingGiph = (selectedGifTitle: string) => {
     setSearchGiph(selectedGifTitle);
@@ -52,10 +50,7 @@ function App() {
 
   return (
     <div className="bg-gray-100 min-h-screen psychedelic-background">
-      <Navbar
-        showNewFavoriteMessage={showNewFavoriteMessage}
-        setShowNewFavoriteMessage={setShowNewFavoriteMessage}
-      />
+      <Navbar />
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-center items-center mb-8">
           <h1 className="text-5xl font-bold text-gray-900">GIPHY</h1>
@@ -104,8 +99,6 @@ function App() {
                 giphy={giphy}
                 favorites={favorites}
                 setFavorites={setFavorites}
-                showNewFavoriteMessage={showNewFavoriteMessage}
-                setShowNewFavoriteMessage={setShowNewFavoriteMessage}
               />
             </div>
           </div>

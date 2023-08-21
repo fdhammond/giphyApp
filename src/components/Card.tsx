@@ -1,18 +1,11 @@
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { GifProps, CardProps } from "../types/types";
 
-const Card: React.FC<CardProps> = ({
-  giphy,
-  favorites,
-  setFavorites,
-  showNewFavoriteMessage,
-  setShowNewFavoriteMessage,
-}) => {
+const Card: React.FC<CardProps> = ({ giphy, favorites, setFavorites }) => {
   const handleStarIcon = (selectedStarItem: GifProps) => {
     const isFavorite = favorites.some(
       (item) => item.id === selectedStarItem.id
     );
-    setShowNewFavoriteMessage(!showNewFavoriteMessage);
 
     if (isFavorite) {
       const updateFavorites = favorites.filter(
